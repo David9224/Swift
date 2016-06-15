@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,43 +19,81 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN libro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dc6-Si-Vbv">
-                                <rect key="frame" x="262" y="173" width="76" height="21"/>
+                                <rect key="frame" x="262" y="28" width="76" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mb4-O4-94U">
-                                <rect key="frame" x="140" y="261" width="321" height="253"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.14938038793103448" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="978-84-376-0494-7" borderStyle="roundedRect" placeholder="INGRESE AQUI EL ISBN" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="3nv-eA-y5s">
+                                <rect key="frame" x="206" y="57" width="188" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="321" id="wR8-Wa-QjX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="INGRESE AQUI EL ISBN" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="3nv-eA-y5s">
-                                <rect key="frame" x="206" y="202" width="188" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="188" id="Vng-8L-lxK"/>
+                                    <constraint firstAttribute="width" constant="188" id="Fkf-XV-pQY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" returnKeyType="search"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mb4-O4-94U">
+                                <rect key="frame" x="20" y="104" width="560" height="57"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.14938038793103448" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Titulo" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ys1-59-rtm">
+                                <rect key="frame" x="20" y="185" width="560" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="G5R-ei-Jkl"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="0.4557763313" blue="0.29485330040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Autores" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OQD-PM-o1s">
+                                <rect key="frame" x="20" y="268" width="560" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="7yl-6Z-3me"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Portada" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UiK-kd-vsB">
+                                <rect key="frame" x="28" y="340" width="552" height="156"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3nv-eA-y5s" firstAttribute="top" secondItem="Dc6-Si-Vbv" secondAttribute="bottom" constant="8" symbolic="YES" id="GUT-IG-dZe"/>
-                            <constraint firstItem="Dc6-Si-Vbv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f6D-u7-jtZ"/>
-                            <constraint firstItem="3nv-eA-y5s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fFS-i7-SSp"/>
-                            <constraint firstItem="mb4-O4-94U" firstAttribute="top" secondItem="3nv-eA-y5s" secondAttribute="bottom" constant="29" id="qIn-cd-Qeg"/>
-                            <constraint firstItem="mb4-O4-94U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rgc-cp-ANc"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mb4-O4-94U" secondAttribute="bottom" constant="86" id="tpK-uc-ndI"/>
-                            <constraint firstItem="Dc6-Si-Vbv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="153" id="zL9-g6-tdE"/>
+                            <constraint firstItem="mb4-O4-94U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0qd-8u-LGR"/>
+                            <constraint firstItem="ys1-59-rtm" firstAttribute="top" secondItem="mb4-O4-94U" secondAttribute="bottom" constant="24" id="3iQ-0Y-Rlf"/>
+                            <constraint firstItem="OQD-PM-o1s" firstAttribute="top" secondItem="ys1-59-rtm" secondAttribute="bottom" constant="32" id="5Au-q4-8i5"/>
+                            <constraint firstItem="ys1-59-rtm" firstAttribute="leading" secondItem="OQD-PM-o1s" secondAttribute="leading" id="C9I-lE-Es8"/>
+                            <constraint firstItem="ys1-59-rtm" firstAttribute="leading" secondItem="mb4-O4-94U" secondAttribute="leading" id="Enw-fO-6kQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mb4-O4-94U" secondAttribute="bottom" constant="439" id="WRG-5P-eDD"/>
+                            <constraint firstItem="ys1-59-rtm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f0e-FG-ALt"/>
+                            <constraint firstItem="OQD-PM-o1s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fFb-jO-KaD"/>
+                            <constraint firstItem="Dc6-Si-Vbv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fW8-Qh-VIp"/>
+                            <constraint firstItem="3nv-eA-y5s" firstAttribute="top" secondItem="Dc6-Si-Vbv" secondAttribute="bottom" constant="8" symbolic="YES" id="hVZ-ig-f1g"/>
+                            <constraint firstItem="UiK-kd-vsB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="mjy-nC-9bi"/>
+                            <constraint firstItem="Dc6-Si-Vbv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="p0b-tY-naJ"/>
+                            <constraint firstItem="UiK-kd-vsB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="4" id="r38-bj-hMK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UiK-kd-vsB" secondAttribute="bottom" constant="104" id="rUd-v8-yp3"/>
+                            <constraint firstItem="3nv-eA-y5s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tfb-Fm-Iqh"/>
+                            <constraint firstItem="mb4-O4-94U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xoK-g5-dWB"/>
+                            <constraint firstItem="UiK-kd-vsB" firstAttribute="top" secondItem="OQD-PM-o1s" secondAttribute="bottom" constant="21" id="yUz-kZ-MZM"/>
+                            <constraint firstItem="mb4-O4-94U" firstAttribute="top" secondItem="3nv-eA-y5s" secondAttribute="bottom" constant="17" id="yaE-se-cIU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="autores" destination="OQD-PM-o1s" id="7Qu-C9-E2J"/>
                         <outlet property="isbn" destination="3nv-eA-y5s" id="TJG-bT-Cvt"/>
+                        <outlet property="portada" destination="UiK-kd-vsB" id="y5b-Eq-Fbh"/>
                         <outlet property="resultado" destination="mb4-O4-94U" id="x5u-7k-lZe"/>
+                        <outlet property="titulo" destination="ys1-59-rtm" id="VlF-OV-C8A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

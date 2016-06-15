@@ -13,6 +13,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     @IBOutlet weak var isbn: UITextField!
     @IBOutlet weak var resultado: UITextView!
     
+    @IBOutlet weak var titulo: UITextView!
+    @IBOutlet weak var autores: UITextView!
+    @IBOutlet weak var portada: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -46,6 +49,21 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         let datos:NSData? = NSData(contentsOfURL: url!)
         let texto = NSString(data: datos!, encoding: NSUTF8StringEncoding)
         self.resultado.text = String(texto!)
+        do{
+            let json = try NSJSONSerialization.JSONObjectWithData(datos!, options: NSJSONReadingOptions.MutableLeaves)
+            let dico1 = json as! NSDictionary
+            let dico2 = dico1["ISBN:"+isbn.text!] as! NSDictionary
+            
+            titulo.text = dico2["title"] as! NSString as String
+            
+            let dico3 = dico2["authors"] as! NSArray as Array
+            print(dico3[0])
+            let dico4 = dico3[0] as! NSDictionary
+            
+            autores.text = dico4["name"] as! NSString as String
+        }catch _ {
+        }
+        
     }
 }
 
