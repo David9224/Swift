@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="pizzaWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Tamaño" id="NdL-N3-arP">
+                            <color key="textColor" red="1" green="0.4557763313" blue="0.29485330040000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <picker height="61" alignment="left" focusStyle="sequence" id="ob0-nD-3bv">
+                            <connections>
+                                <action selector="itemSelected:" destination="AgC-eL-Hgc" id="O00-F4-JfX"/>
+                            </connections>
+                        </picker>
+                        <label alignment="left" text="Pequeña" id="KLY-8B-0cS">
+                            <color key="textColor" red="1" green="0.4557763313" blue="0.29485330040000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <button width="1" height="30.5" alignment="left" title="Siguiente" id="cjb-o8-hMo">
+                            <color key="titleColor" red="1" green="0.4557763313" blue="0.29485330040000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="w4N-UK-odK" kind="push" id="7cl-J7-ay0"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="lbl" destination="KLY-8B-0cS" id="7rM-7l-K2K"/>
+                        <outlet property="picker" destination="ob0-nD-3bv" id="IBe-bk-a0I"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="186" y="172"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="xdV-iM-Gyu">
+            <objects>
+                <controller id="w4N-UK-odK">
+                    <items>
+                        <label height="19.5" alignment="left" text="Tipo De Masa" id="1vs-49-jkq"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="455" y="172"/>
+        </scene>
+    </scenes>
+</document>
