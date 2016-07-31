@@ -1,8 +1,8 @@
 //
-//  InterfaceController.swift
-//  pizzaWatch WatchKit Extension
+//  quesoController.swift
+//  pizzaWatch
 //
-//  Created by David Aristizabal on 29/06/16.
+//  Created by David Aristizabal on 30/07/16.
 //  Copyright © 2016 David Aristizabal. All rights reserved.
 //
 
@@ -10,32 +10,40 @@ import WatchKit
 import Foundation
 
 
-class InterfaceController: WKInterfaceController {
+class quesoController: WKInterfaceController {
 
-    @IBOutlet var lbl: WKInterfaceLabel!
-    @IBOutlet var picker: WKInterfacePicker!
+    @IBOutlet var quesoLst: WKInterfacePicker!
+    @IBOutlet var quesoLbl: WKInterfaceLabel!
+    
+    var queso = ""
+    var tamano = ""
+    var masa = ""
     var itemsArray : Array = Array<WKPickerItem>()
-    var tamano : String = ""
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
+        // Configure interface objects here.
         let item1 = WKPickerItem()
-        item1.title = "Pequeña"
-        item1.accessoryImage = WKImage(imageName: "Pequeña.png")
+        item1.title = "Mozarela"
         
         let item2 = WKPickerItem()
-        item2.title = "Mediana"
-        item2.accessoryImage = WKImage(imageName: "Mediana.png")
+        item2.title = "Cheddar"
         
         let item3 = WKPickerItem()
-        item3.title = "Grande"
-        item3.accessoryImage = WKImage(imageName: "Grande.png")
+        item3.title = "Parmesano"
+        
+        let item4 = WKPickerItem()
+        item4.title = "Sin Queso"
         
         itemsArray = [item1, item2, item3]
         
-        picker.setItems(itemsArray)
+        quesoLst.setItems(itemsArray)
+        
+        let c = context as! Masa
+        tamano = c.tamano
+        masa = c.masa
     }
 
     override func willActivate() {
@@ -47,16 +55,17 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
     @IBAction func itemSelected(value: Int) {
         let item = itemsArray[value]
-        tamano = item.title!
-        lbl.setText(String(item.title!))
+        queso = item.title!
+        quesoLbl.setText(String(item.title!))
     }
     
-    
-    @IBAction func siguienteTamano() {
-        let tamanoContext = Masa(t: tamano)
-        pushControllerWithName("tamaño", context: tamanoContext)
+    @IBAction func quesoSiguiente() {
+        let pizzaContext = Masa(t: tamano, m: masa, q: queso)
+        pushControllerWithName("queso", context: pizzaContext)
     }
+    
+
 }
