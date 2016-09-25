@@ -65,5 +65,21 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         }
         
     }
+    
+    func buscarImagen(imagen : String) -> [UIImage]{
+        var imgs = [UIImage]()
+        let urls = "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&rsz=8&q="+imagen
+
+        let url = NSURL(string: urls)
+        let datos = NSData(contentsOfURL: url!)
+        do {
+            let json = try NSJSONSerialization.JSONObjectWithData(datos!, options: NSJSONReadingOptions.MutableLeaves)
+            print(json)
+            
+        }catch {
+            
+        }
+        return imgs
+    }
 }
 
